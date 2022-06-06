@@ -1,0 +1,85 @@
+<div id="container">
+  <div *ngFor="let movie of movies">
+    <div class="card">
+      <button type="button" class="btn btn-dark"><a [routerLink]="['/movieDetails', movie.title, movie.movieImageUrl, movie.trailerUrl, movie.description, movie.id]">Reservar</a></button>
+        <div class="poster"><img src="{{movie.movieImageUrl}}"></div>
+        <div class="details">
+            <h2>{{movie.title}}<br><span>Duração: {{movie.durationTime}}</span></h2>
+            <div class="rating" *ngIf ="movie.movieScore == 1">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star-o" aria-hidden="true"></i>
+                <i class="fa fa-star-o" aria-hidden="true"></i>
+                <i class="fa fa-star-o" aria-hidden="true"></i>
+                <i class="fa fa-star-o" aria-hidden="true"></i> 
+                <span>{{movie.movieScore}}/5</span>
+            </div>
+            <div class="rating" *ngIf ="movie.movieScore == 2">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star-o" aria-hidden="true"></i>
+                <i class="fa fa-star-o" aria-hidden="true"></i>
+                <i class="fa fa-star-o" aria-hidden="true"></i>
+                <span>{{movie.movieScore}}/5</span>
+            </div>
+            <div class="rating" *ngIf ="movie.movieScore == 3">
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star-o" aria-hidden="true"></i>
+              <i class="fa fa-star-o" aria-hidden="true"></i>
+              <span>{{movie.movieScore}}/5</span>
+            </div>
+            <div class="rating" *ngIf ="movie.movieScore == 4">
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star-o" aria-hidden="true"></i>
+              <span>{{movie.movieScore}}/5</span>
+            </div>
+            <div class="rating" *ngIf ="movie.movieScore == 5">
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <span>{{movie.movieScore}}/5</span>
+            </div>
+            <div class="tags">
+                <span class="FirstCategory">{{movie.genre[0]}}</span>
+                <span class="SecondCategory">{{movie.genre[1]}}</span>
+            </div>
+            <div class="info">
+                <p>{{movie.description}}</p>
+            </div>
+            <div class="star">
+                <h4>Actores:</h4>
+                <ul>
+                    <li><img src={{movie.cast[0].photoUrl}}></li>
+                    <li><img src={{movie.cast[1].photoUrl}}></li>
+                    <li><img src={{movie.cast[2].photoUrl}}></li>
+                    <li><img src={{movie.cast[3].photoUrl}}></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<!-- 
+<div id="container">
+  <div>
+    <app-movie-card></app-movie-card>
+  </div>
+  <div>
+    <app-movie-card></app-movie-card>
+  </div>
+  <div>
+    <app-movie-card></app-movie-card>
+  </div>
+  <div>
+    <app-movie-card></app-movie-card>
+  </div>
+</div>
+-->
+

@@ -1,0 +1,15 @@
+.picsum-img-wrapper {
+    width: 100%;
+    position: relative;
+    margin-top: 0;
+}
+
+#imgId {
+    width:100%;
+    height:600px;
+}
+
+.blackLine {
+    border-top: 10px black;
+    margin-bottom: 0%;
+}

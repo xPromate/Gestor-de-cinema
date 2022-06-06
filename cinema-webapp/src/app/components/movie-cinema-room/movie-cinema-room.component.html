@@ -1,0 +1,111 @@
+<app-header></app-header>
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Selecione lugares:</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="container">
+        <div class="screen"></div>        
+        <div class="row">
+            <div id="00" (click)="onClick('00')" class="seat"></div>
+            <div id="01" (click)="onClick('01')" class="seat"></div>
+            <div id="02" (click)="onClick('02')" class="seat"></div>
+            <div id="03" (click)="onClick('03')" class="seat"></div>
+            <div id="04" (click)="onClick('04')" class="seat"></div>
+            <div id="05" (click)="onClick('05')" class="seat"></div>
+          </div>
+          <div class="row">
+            <div id="10" (click)="onClick('10')" class="seat"></div>
+            <div id="11" (click)="onClick('11')" class="seat"></div>
+            <div id="12" (click)="onClick('12')" class="seat"></div>
+            <div id="13" (click)="onClick('13')" class="seat"></div> <!-- seat occupied-->
+            <div id="14" (click)="onClick('14')" class="seat"></div>
+            <div id="15" (click)="onClick('15')" class="seat"></div>
+          </div>
+          <div class="row">
+            <div id="20" (click)="onClick('20')" class="seat"></div>
+            <div id="21" (click)="onClick('21')" class="seat"></div>
+            <div id="22" (click)="onClick('22')" class="seat"></div>
+            <div id="23" (click)="onClick('23')" class="seat"></div>
+            <div id="24" (click)="onClick('24')" class="seat"></div>
+            <div id="25" (click)="onClick('25')" class="seat"></div>
+          </div>
+          <div class="row">
+            <div id="30" (click)="onClick('30')" class="seat"></div>
+            <div id="31" (click)="onClick('31')" class="seat"></div>
+            <div id="32" (click)="onClick('32')" class="seat"></div>
+            <div id="33" (click)="onClick('33')" class="seat"></div>
+            <div id="34" (click)="onClick('34')" class="seat"></div>
+            <div id="35" (click)="onClick('35')" class="seat"></div>
+          </div>
+          <div class="row">
+            <div id="40" (click)="onClick('40')" class="seat"></div>
+            <div id="41" (click)="onClick('41')" class="seat"></div>
+            <div id="42" (click)="onClick('42')" class="seat"></div>
+            <div id="43" (click)="onClick('43')" class="seat"></div>
+            <div id="44" (click)="onClick('44')" class="seat"></div>
+            <div id="45" (click)="onClick('45')" class="seat"></div>
+          </div>
+          <div class="row">
+            <div id="50" (click)="onClick('50')" class="seat"></div>
+            <div id="51" (click)="onClick('51')" class="seat"></div>
+            <div id="52" (click)="onClick('52')" class="seat"></div>
+            <div id="53" (click)="onClick('53')" class="seat"></div>
+            <div id="54" (click)="onClick('54')" class="seat"></div>
+            <div id="55" (click)="onClick('55')" class="seat"></div>
+          </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="reserve(); modal.dismiss('Cross click')">Reservar</button>
+    </div>
+</ng-template>
+
+<div id="container">
+    <div>
+        <img [src]="movieCoverUrl" width="60%" height="60%">
+    </div>
+
+    <div id="containerVertical">
+        <div class="row mb-4">
+
+          <div class="col-md-12">
+            <h2>{{movieName}}</h2>
+          </div>
+            
+          <div class="col-md-12">
+            <a [href]="movieTrailer" class="btn btn-primary">
+              Trailer <small>(YouTube)</small></a>
+          </div>
+          
+        </div>
+        <div *ngFor="let m of movies" class="row">
+            <div class="col-md-4">
+              <h4 class="font-weight-light">
+                <i class="fas fa-calendar-alt"></i>
+                Data</h4>
+             {{m.exhibitionDate}}
+            </div>
+            <div class="col-md-4">
+              <h4 class="font-weight-light"><i class="fas fa-clock"></i> Hora</h4>
+              {{m.exhibitionHour}}
+            </div>
+            <div class="col-md-4">
+              
+          <button class="btn btn-info" (click)="open(content,m)">Reservar</button>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+          <div class="col-md-12">
+            <h4 class="font-weight-light">Descrição</h4>
+            <p>{{description}}</p>
+          </div>
+        </div>
+    </div>    
+</div> 
+<app-footer></app-footer>

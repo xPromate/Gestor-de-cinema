@@ -1,0 +1,47 @@
+.footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    text-align: center;
+}
+
+.blackLine {
+    border-top: 1px solid black;
+    margin-top: 5%;
+}
+
+.logo {
+    width: 10%;
+    margin-left: 27%;
+    margin-bottom: 1%;
+    margin-top: 1%;
+}
+
+.information {
+    width: 10%;
+    margin-right: 30%;
+    margin-bottom: 1%;
+    margin-top: 1%;
+}
+
+#containerVertical{
+    display: flex;                 
+    flex-direction: column;            
+    flex-wrap: nowrap;             
+    justify-content: space-between; 
+    background-color: white;
+    align-items: center
+}
+
+#container {
+    display: flex;                  
+    flex-direction: row;           
+    flex-wrap: nowrap;              
+    justify-content: space-between; 
+    background-color: white;
+    align-items: center;
+    margin-top: 2%;
+    margin-left: 2%;
+    margin-right: 2%;
+  }

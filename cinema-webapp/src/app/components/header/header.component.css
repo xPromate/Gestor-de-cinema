@@ -1,0 +1,21 @@
+.container{
+    width: 80%;
+    height: 125px;
+    margin: auto;
+    padding: 10px;
+}
+
+.logo {
+    margin-top: 1%;
+    width: 15%;
+}
+
+.searchButton {
+    float: right;
+    margin-top: -5%;
+}
+
+.blackLine {
+    border-top: 2px solid black;
+    margin-bottom: 0%;
+}
